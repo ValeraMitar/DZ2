@@ -1,0 +1,88 @@
+table {
+	font-family: 'Cormorant', serif;
+	width: 80vw;
+	margin: 10vh auto 0;
+}
+table th{
+	background: rgba(144, 199, 190, 0.74);
+}
+table,td,th {
+	border: 1px solid #000;
+	border-collapse: collapse;
+	line-height: 60px;
+}
+td {
+	padding-left: 3vh; 
+}
+tbody tr:nth-child(even) {
+	background:rgba(166, 168, 241, 0.74); 
+}
+tfoot td{
+	font-weight: bold;
+}
+tfoot td:last-child{
+	text-align: right;
+	padding-right: 3vh;
+}
+.menu {
+	text-align: center;
+	width: 80vw;
+	margin: 10vh auto 0;
+	position: relative;
+	padding: 0;
+	background: #000;
+	font-size: 0;
+}
+.menu li {
+	list-style-type: none;
+	border: 1px solid #000;
+	width: 15vw;/*задаю ширину блока ли*/
+	background: #000;
+	font-size: 14pt;
+}
+.menu ul {
+	padding: 0;
+	}
+
+.menu > li {
+	display:inline-block; 
+}
+.menu li > a {
+	text-decoration: none;
+	display: block;/*делаю для того чтобы при навдении на блок все тело работало как ссылка*/
+	color: #fff;
+	line-height: 50px;
+	width: 100%;/*делаю для того чтобы блок ссылки занимал все пространствоблока ли*/
+}
+.menu li > ul {
+	display: none;/*делаю так чтобы выпадающее меню было скрвто от глаз*/
+}
+.menu a:hover {
+	background:#e24486;/*когда я навожу мышку что я вижу*/
+	color:#000;
+}
+/*выпадающее меню*/
+.menu li:hover {
+	position: relative;/*делает так чтобы выпадающая строка считалась дочерней для своего подпункта*/
+	background: #e24486;
+}
+.menu li:hover > a {
+	color:#000;/*делаю так чтобы после того кака я пошел на список ниже в меню все еще оставался цвет черный*/
+}
+.menu li:hover > ul {
+	display: block;/*делаю так чтобы при наведениии на пункт открывались его подпункты в других случаях ничего не происходит*/
+	position: absolute;/*делаем для того чтобы всплывающие окна накладывались на таблицу, т.е. отображались поверх всего на веб-странице*/
+}
+/*второй и последующий уровни вложенности*/
+
+.menu li:hover ul li ul {
+	position: absolute;/*позволяет нам позиционировать напротив выпадающую строку*/
+	left:  15vw;
+	top: 0;
+}
+.menu li:last-child ul > li:hover > ul  {
+	display: block;	
+	position: absolute;
+	left:-15vw;
+	top: 0;
+}
